@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build & webpack --config ./webpack.config.js",
+    "start": "next start & webpack --config ./webpack.config.js & nodemon ./server/index.js",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,8 @@
   },
   "homepage": "https://github.com/tyler-audio/portfolio#readme",
   "dependencies": {
-    "eslint": "^8.0.1",
-    "eslint-config-airbnb": "^18.2.1",
     "express": "^4.17.1",
+    "next": "^12.0.2",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -38,6 +40,7 @@
     "@babel/runtime": "^7.15.4",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.4.0",
+    "eslint": "^7.32.0",
     "node": "^16.11.1",
     "nodemon": "^2.0.14",
     "source-map-loader": "^3.0.0",
