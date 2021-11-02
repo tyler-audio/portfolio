@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build & webpack --config ./webpack.config.js",
-    "start": "next start & webpack --config ./webpack.config.js & nodemon ./server/index.js",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "repository": {
@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/tyler-audio/portfolio#readme",
   "dependencies": {
-    "express": "^4.17.1",
     "next": "^12.0.2",
-    "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -33,19 +31,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/plugin-transform-runtime": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "@babel/preset-react": "^7.14.5",
-    "@babel/runtime": "^7.15.4",
-    "babel-loader": "^8.2.3",
-    "css-loader": "^6.4.0",
-    "eslint": "^7.32.0",
     "node": "^16.11.1",
-    "nodemon": "^2.0.14",
-    "source-map-loader": "^3.0.0",
-    "style-loader": "^3.3.0",
-    "webpack": "^5.59.1",
-    "webpack-cli": "^4.9.1"
+    "nodemon": "^2.0.14"
   }
 }
