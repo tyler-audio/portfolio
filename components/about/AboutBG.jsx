@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AppsBG = () => {
+const AboutBG = () => {
   return (
     <canvas></canvas>
   );
 };
 
-export default AppsBG;
+export default AboutBG;
