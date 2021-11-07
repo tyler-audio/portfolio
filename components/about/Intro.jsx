@@ -5,8 +5,11 @@ import Picture from './Picture';
 const Intro = () => {
   return (
     <div>
-      <div>Hey I'm Tyler</div>
-      <Picture />
+      <h3>Hey I'm Tyler</h3>
+      <div>
+        <Picture />
+        <p>Small blurb about me. blah blah blah blah.</p>
+      </div>
     </div>
   );
 };

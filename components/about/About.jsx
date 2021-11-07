@@ -6,8 +6,10 @@ import Links from './Links';
 const About = () => {
   return (
     <section className="about-wrapper" id="about">
-      <Intro />
-      <Links />
+      <div>
+        <Intro />
+        <Links />
+      </div>
     </section>
   );
 };
