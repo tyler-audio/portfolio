@@ -20,4 +20,4 @@ export default {
     github: 'https://github.com/hackreactor-lax45-frontendcapstone/project-catwalk',
     url: '',
   },
-}
+};
