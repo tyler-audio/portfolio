@@ -1,14 +1,15 @@
 import React from 'react';
 
 import AppsCard from './AppsCard';
+import projectData from '../lib/projectData.js';
 
 const AppsCardList = () => {
-  let test = ['Grimtomb', 'Fulcrum', 'Catwalk', 'Neighbr'];
+  const projects = Object.keys(projectData);
 
   return (
     <div className="apps-list" id="apps-list">
-      {test.map((project) => (
-        <AppsCard project={project}/>
+      {projects.map((p) => (
+        <AppsCard project={p} key={p}/>
       ))}
     </div>
   );
