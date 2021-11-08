@@ -1,0 +1,7 @@
+/*
+  notes
+  plucks
+  drone
+  chords
+  one shots
+ */
