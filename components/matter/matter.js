@@ -15,8 +15,8 @@ const render = Render.create({
   engine: engine,
   options: {
     wireframes: false,
-    height: '100vh',
-    width: '100vw',
+    // height: '100vh',
+    // width: '100vw',
   }
 });
 
