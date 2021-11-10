@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: darkcyan;
+  color: #fff;
   /* overflow: hidden; */
 }
 
@@ -30,5 +30,9 @@ Background
 ========= */
 
 #background {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  /* z-index: -1; */
 }

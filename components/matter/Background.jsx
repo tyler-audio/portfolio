@@ -21,6 +21,7 @@ const Background = () => {
       canvas: document.querySelector('#background'),
       engine: engine,
       options: {
+        background: '#171F23',
         wireframes: false,
       }
     });

@@ -5,10 +5,10 @@ Matter.use(MatterAttractors);
 
 /**
  * SHAPES
- * - circles
- * - squares
- * - polygons
- * -
+ * - circles : plucks : music notes + beamed notes
+ * - squares : chords : guitar
+ * - hexagons : drones : piano / synth
+ * SWAP SHAPES FOR MUSIC NOTE SVGs?
  */
 
 export const createCircle = (
@@ -26,7 +26,7 @@ export const createCircle = (
       group: -1,
     },
     render: {
-      fillStyle: 'blue',
+      fillStyle: '#84A98C',
     },
   });
   return circle;
@@ -48,7 +48,7 @@ export const createSquare = (
       group: -3,
     },
     render: {
-      fillStyle: 'green',
+      fillStyle: '#52796F ',
     },
   });
 
@@ -70,33 +70,17 @@ export const createHexagon = (
       group: -2,
     },
     render: {
-      fillStyle: 'red',
+      fillStyle: '#354F52',
     },
   });
 
   return hexagon;
 };
 
-// export const createTitle(
-//   /**
-//    *
-//    */
-// );
+// export const createTitle = () => {};
 
-// export const createAppCard(
-//   /**
-//    *
-//    */
-// );
+// export const createAppCard = () => {};
 
-// export const createAbout(
-//   /**
-//    *
-//    */
-// );
+// export const createAbout = () => {};
 
-// export const createLinks(
-//   /**
-//    *
-//    */
-// );
+// export const createLinks = () => {};
