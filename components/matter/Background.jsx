@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import Matter, { Body, IEventCollision } from 'matter-js';
 // import MatterAttractors from 'matter-attractors';
 
+import { createCircle, createHexagon, createSquare } from './bodies.js';
+
 
 // Matter.use(MatterAttractors);
 
@@ -16,25 +18,27 @@ const Background = () => {
 
   useEffect(() => {
     const render = Render.create({
-      element: document.querySelector('#background'),
+      canvas: document.querySelector('#background'),
       engine: engine,
       options: {
         wireframes: false,
       }
     });
 
+    Composite.add(engine.world, [createCircle(), createHexagon(), createSquare()]);
+
     // engine.gravity
 
     Render.run(render);
     const runner = Runner.create();
     Runner.run(runner, engine);
-  }, [Composite, Engine, Events, Render, Runner, engine]);
+  }, []);
 
 
 
 
   return (
-    <canvas id="background" width="500" height="500"></canvas>
+    <canvas id="background"></canvas>
   );
 };
 
