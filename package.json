@@ -24,6 +24,7 @@
     "embla-carousel": "^6.0.0",
     "embla-carousel-autoplay": "^6.0.0",
     "embla-carousel-react": "^6.0.0",
+    "howler": "^2.2.3",
     "matter-attractors": "^0.1.6",
     "matter-js": "^0.17.1",
     "mongoose": "^6.0.12",

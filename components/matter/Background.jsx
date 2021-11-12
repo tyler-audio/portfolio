@@ -16,9 +16,13 @@ const Background = () => {
 
   const engine = Engine.create();
 
+
   useEffect(() => {
+    const bg = document.querySelector('#background');
+    // bg.height = document.body.height;
+
     const render = Render.create({
-      canvas: document.querySelector('#background'),
+      canvas: bg,
       engine: engine,
       options: {
         background: '#171F23',

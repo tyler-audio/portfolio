@@ -1,6 +1,35 @@
-import Matter from 'matter-js';
-import soundOptions from './soundOptions';
+/*
+  notes
+  plucks
+  drone
+  chords
+  one shots
+ */
 
-export const randomOption = (options: soundOptions) => {
-  const optionKeys = Object.keys(soundOptions);
-}
+  const circle = {
+    0: {
+      sample: 'pluck_04.wav',
+      color: '#84A98C',
+    }
+  };
+
+  const square = {
+
+  };
+
+  const hexagon = {
+
+  };
+
+  const oneShots = {
+
+  };
+
+  const soundColors = {
+    circle,
+    square,
+    hexagon,
+    oneShots,
+  };
+
+  export default soundColors;

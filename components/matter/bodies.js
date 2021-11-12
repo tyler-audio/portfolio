@@ -1,6 +1,8 @@
 import Matter from 'matter-js';
 import MatterAttractors from 'matter-attractors';
 
+import soundColors from './soundColors';
+
 Matter.use(MatterAttractors);
 
 /**
@@ -11,11 +13,18 @@ Matter.use(MatterAttractors);
  * SWAP SHAPES FOR MUSIC NOTE SVGs?
  */
 
+const randomOption = (shape) => {
+  const options = Object.keys(soundColors[shape]);
+  const randomIndex = Math.floor(Math.random() * options.length - 1);
+  return options[randomIndex];
+};
+
 export const createCircle = (
   x = 400,
   y = 200,
   radius = 40
 ) => {
+  // const options = randomOption(circle.label);
   const circle = Matter.Bodies.circle(x, y, radius, {
     label: 'circle',
     friction: 0,
@@ -29,6 +38,8 @@ export const createCircle = (
       fillStyle: '#84A98C',
     },
   });
+  circle.sound = 'pluck-04.wav';
+
   return circle;
 }
 
