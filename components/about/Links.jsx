@@ -6,7 +6,7 @@ const Links = () => {
   return (
     <div>
       <a href="">
-        <button className="social-link" id="contact-btn">Contact Me</button>
+        <button className="social_link" id="contact_btn">Contact Me</button>
       </a>
 
       <a
@@ -14,7 +14,7 @@ const Links = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="social-link">LinkedIn</button>
+        <button className="social_link">LinkedIn</button>
       </a>
 
       <a
@@ -22,7 +22,7 @@ const Links = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="social-link">Github</button>
+        <button className="social_link">Github</button>
       </a>
     </div>
   );

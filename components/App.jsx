@@ -8,12 +8,12 @@ import Background from './matter/Background';
 
 const App = () => {
   return (
-    <div id="scroll-snap-container">
+    <div id="app">
       <Navbar />
       <Title />
       <Applications />
       <About />
-      <Background />
+      {/* <Background /> */}
     </div>
   );
 };

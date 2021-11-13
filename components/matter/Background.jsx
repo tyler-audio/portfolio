@@ -16,10 +16,9 @@ const Background = () => {
 
   const engine = Engine.create();
 
-
   useEffect(() => {
     const bg = document.querySelector('#background');
-    // bg.height = document.body.height;
+    // bg.height = bg * 1.5;
 
     const render = Render.create({
       canvas: bg,
@@ -27,12 +26,40 @@ const Background = () => {
       options: {
         background: '#171F23',
         wireframes: false,
-      }
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
     });
 
-    Composite.add(engine.world, [createCircle(), createHexagon(), createSquare()]);
+    // Composite.add(engine.world, [createCircle(), createHexagon(), createSquare()]);
+    Composite.add(engine.world, [createCircle()]);
 
-    // engine.gravity
+    // ================= Checks amount of bodies in composite ==================
+
+    // setInterval(() => {
+    //   console.log(Composite.allBodies(engine.world).length);
+    // }, 50);
+
+    setInterval(() => {
+      Composite.add(engine.world, [createCircle()]);
+    }, 4000);
+
+    // setInterval(() => {
+    //   Composite.add(engine.world, [createHexagon()]);
+    // }, 7000);
+
+    // setInterval(() => {
+    //   Composite.add(engine.world, [createSquare()]);
+    // }, 9000);
+
+    setInterval(() => {
+      const bodies = Composite.allBodies(engine.world);
+      for (let i = 0; i < bodies.length; i++) {
+        if (bodies[i].position.y > bg.height ) Composite.remove(engine.world, bodies[i]);
+      }
+    }, 5000);
+
+    engine.gravity.y = 0.05;
 
     Render.run(render);
     const runner = Runner.create();

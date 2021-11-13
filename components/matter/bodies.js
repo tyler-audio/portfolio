@@ -20,8 +20,8 @@ const randomOption = (shape) => {
 };
 
 export const createCircle = (
-  x = 400,
-  y = 200,
+  x = Math.random() * (window.innerWidth * 0.8),
+  y = Math.random() * (window.innerHeight * 0.8),
   radius = 40
 ) => {
   // const options = randomOption(circle.label);
@@ -44,8 +44,8 @@ export const createCircle = (
 }
 
 export const createSquare = (
-  x = 600,
-  y = 200,
+  x = Math.random() * (window.innerWidth * 0.8),
+  y = Math.random() * (window.innerHeight * 0.8),
   width = 70,
   height = 70
 ) => {
@@ -67,8 +67,8 @@ export const createSquare = (
 };
 
 export const createHexagon = (
-  x = 200,
-  y = 200,
+  x = Math.random() * (window.innerWidth * 0.8),
+  y = Math.random() * (window.innerHeight * 0.8),
   radius = 40
 ) => {
   const hexagon = Matter.Bodies.polygon(x, y, 6, radius, {
@@ -88,6 +88,7 @@ export const createHexagon = (
   return hexagon;
 };
 
+
 // export const createTitle = () => {};
 
 // export const createAppCard = () => {};
@@ -95,3 +96,8 @@ export const createHexagon = (
 // export const createAbout = () => {};
 
 // export const createLinks = () => {};
+
+/**
+ * element.attributes.width / height
+ * element.x / element.y
+ */

@@ -7,7 +7,7 @@ const AppsCardList = () => {
   const projects = Object.keys(projectData);
 
   return (
-    <div className="apps-list" id="apps-list">
+    <div className="apps_list" id="apps_list">
       {projects.map((p) => (
         <AppsCard project={p} key={p}/>
       ))}

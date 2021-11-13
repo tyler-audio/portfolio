@@ -4,7 +4,7 @@ import AppsCardList from './AppsCardList';
 
 const Applications = () => {
   return (
-    <section className="apps-wrapper" id="apps">
+    <section className="apps_wrapper" id="apps">
       <AppsCardList />
     </section>
   );

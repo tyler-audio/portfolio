@@ -23,6 +23,7 @@ const AppsCard = ({ project }) => {
           {images.map((i) => (
             <div className="embla__slide" key={i}>
               <img
+                className="app_image"
                 src={`https://tj-portfolio-media.s3.us-west-1.amazonaws.com/${project}/${project}${i}.png`}
                 key={i}
                 width="200"
@@ -36,7 +37,7 @@ const AppsCard = ({ project }) => {
   }
 
   return (
-    <div className="apps-card" id={`apps-card-${project}`}>
+    <div className="apps_card" id={`apps_card_${project}`}>
       {renderImages()}
     </div>
   );

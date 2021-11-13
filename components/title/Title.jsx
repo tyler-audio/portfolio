@@ -4,7 +4,7 @@ import TitleCard from './TitleCard';
 
 const Title = () => {
   return (
-    <section className="title-wrapper" id="title">
+    <section className="title_wrapper" id="title">
       <TitleCard />
     </section>
   );
