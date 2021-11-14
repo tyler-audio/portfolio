@@ -18,19 +18,19 @@ const AppsCard = ({ project }) => {
     const images = [...Array(q).keys()];
 
     return (
-      <div className="embla" ref={emblaRef} id={`embla-${project}`}>
-        <div className="embla__container">
-          {images.map((i) => (
-            <div className="embla__slide" key={i}>
-              <img
-                className="app_image"
-                src={`https://tj-portfolio-media.s3.us-west-1.amazonaws.com/${project}/${project}${i}.png`}
-                key={i}
-              />
-            </div>
-          ))}
+        <div className="embla" ref={emblaRef} id={`embla-${project}`}>
+          <div className="embla__container">
+            {images.map((i) => (
+              <div className="embla__slide" key={i}>
+                <img
+                  className="app_image"
+                  src={`https://tj-portfolio-media.s3.us-west-1.amazonaws.com/${project}/${project}${i}.png`}
+                  key={i}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
     )
   }
 

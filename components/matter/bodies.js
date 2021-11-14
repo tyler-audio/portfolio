@@ -32,10 +32,10 @@ export const createCircle = (
     frictionStatic: 0,
     restitution: 0.8,
     collisionFilter: {
-      group: -1,
+      group: 1,
     },
     render: {
-      fillStyle: '#84A98C',
+      fillStyle: '#A4C2A5',
     },
   });
   circle.sound = 'pluck-04.wav';
@@ -56,10 +56,10 @@ export const createSquare = (
     frictionStatic: 0,
     restitution: 0.8,
     collisionFilter: {
-      group: -3,
+      group: 1,
     },
     render: {
-      fillStyle: '#52796F',
+      fillStyle: '#787876',
     },
   });
 
@@ -78,10 +78,10 @@ export const createHexagon = (
     frictionStatic: 0,
     restitution: 0.8,
     collisionFilter: {
-      group: -2,
+      group: 1,
     },
     render: {
-      fillStyle: '#354F52',
+      fillStyle: '#D8DAD3',
     },
   });
 

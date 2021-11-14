@@ -24,7 +24,7 @@ const Background = () => {
       canvas: bg,
       engine: engine,
       options: {
-        background: '#171F23',
+        background: 'transparent',
         wireframes: false,
         width: window.innerWidth,
         height: window.innerHeight,
@@ -42,15 +42,15 @@ const Background = () => {
 
     setInterval(() => {
       Composite.add(engine.world, [createCircle()]);
-    }, 4000);
+    }, 1000);
 
     setInterval(() => {
       Composite.add(engine.world, [createHexagon()]);
-    }, 7000);
+    }, 1200);
 
     setInterval(() => {
       Composite.add(engine.world, [createSquare()]);
-    }, 9000);
+    }, 1400);
 
     setInterval(() => {
       const bodies = Composite.allBodies(engine.world);

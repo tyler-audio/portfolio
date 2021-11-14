@@ -11,9 +11,9 @@ const App = () => {
     <div id="app">
       <Navbar />
       <Title />
-      <Applications />
       <About />
-      {/* <Background /> */}
+      <Applications />
+      <Background />
     </div>
   );
 };
