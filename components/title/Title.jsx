@@ -5,7 +5,7 @@ import TitleCard from './TitleCard';
 const Title = () => {
   return (
     <section className="title_wrapper" id="title">
-      <TitleCard />
+        <TitleCard />
     </section>
   );
 };

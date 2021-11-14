@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Picture = () => (
-  <div>Picture</div>
+  <img
+    id="headshot"
+    src="/images/headshot.png"
+  />
 );
 
 export default Picture;

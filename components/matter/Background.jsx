@@ -31,8 +31,8 @@ const Background = () => {
       },
     });
 
-    // Composite.add(engine.world, [createCircle(), createHexagon(), createSquare()]);
-    Composite.add(engine.world, [createCircle()]);
+    Composite.add(engine.world, [createCircle(), createHexagon(), createSquare()]);
+    // Composite.add(engine.world, [createCircle()]);
 
     // ================= Checks amount of bodies in composite ==================
 
@@ -44,13 +44,13 @@ const Background = () => {
       Composite.add(engine.world, [createCircle()]);
     }, 4000);
 
-    // setInterval(() => {
-    //   Composite.add(engine.world, [createHexagon()]);
-    // }, 7000);
+    setInterval(() => {
+      Composite.add(engine.world, [createHexagon()]);
+    }, 7000);
 
-    // setInterval(() => {
-    //   Composite.add(engine.world, [createSquare()]);
-    // }, 9000);
+    setInterval(() => {
+      Composite.add(engine.world, [createSquare()]);
+    }, 9000);
 
     setInterval(() => {
       const bodies = Composite.allBodies(engine.world);

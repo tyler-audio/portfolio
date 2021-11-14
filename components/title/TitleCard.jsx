@@ -5,9 +5,9 @@ const TitleCard = () => {
   return (
     <div className="title_card" id="title_card">
       <h1>Tyler Jones</h1>
-      <h3>Software Developer</h3>
-      <h3>&</h3>
-      <h3>Audio Engineer</h3>
+      <h4>Software Developer</h4>
+      <h4>&</h4>
+      <h4>Audio Engineer</h4>
     </div>
   );
 };

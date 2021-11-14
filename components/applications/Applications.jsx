@@ -5,7 +5,12 @@ import AppsCardList from './AppsCardList';
 const Applications = () => {
   return (
     <section className="apps_wrapper" id="apps">
-      <AppsCardList />
+      <div id="apps_items">
+        <h1 id="apps_title">
+          Projects
+        </h1>
+        <AppsCardList />
+      </div>
     </section>
   );
 };

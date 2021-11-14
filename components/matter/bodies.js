@@ -59,7 +59,7 @@ export const createSquare = (
       group: -3,
     },
     render: {
-      fillStyle: '#52796F ',
+      fillStyle: '#52796F',
     },
   });
 

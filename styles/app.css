@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  color: #fff;
   background-color: #171F23;
+  color: #fff;
   /* overflow: hidden; */
 }
 
@@ -25,12 +25,119 @@ section {
 }
 
 /* =========
+Title Card
+========= */
+
+#title_card {
+  width: 40%;
+  /* 60% width for mobile */
+  /* padding: 3em 0; */
+  margin: auto;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid white; */
+  border-radius: 1em;
+  background-color: #CAD2C5;
+  color: #171F23;
+  font-size: 1.7rem;
+}
+
+#title_card h4{
+  margin: auto;
+}
+
+/* =========
+Applications
+========= */
+
+#apps_items {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#apps_title {
+  font-size: 4rem;
+  color: #CAD2C5;
+}
+
+#apps_list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.app_image {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  /* border-radius: 1em; */
+}
+
+/* =========
+About Me
+========= */
+
+#about_items {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+#intro {
+  width: 55%;
+  background-color: #CAD2C5;
+  color: #171F23;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  font-size: 1.4rem;
+}
+
+#headshot {
+  width: 10em;
+  object-fit: cover;
+  border-radius: 50%;
+  float: left;
+  margin: 1em;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2.4rem;
+}
+
+.social_link {
+  text-align: center;
+  text-decoration: none;
+  background-color: #CAD2C5;
+  color: #171F23;
+  width: 70%;
+  border-radius: 100px;
+}
+
+.social_link:hover {
+  opacity: 0.7;
+}
+
+/* =========
 Embla Carousel
 ========= */
 
 .embla {
   overflow: hidden;
-  max-width: 200px;
+  max-width: 20em;
+  border-radius: 1em;
 }
 .embla__container {
   display: flex;

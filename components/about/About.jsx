@@ -6,7 +6,7 @@ import Links from './Links';
 const About = () => {
   return (
     <section className="about_wrapper" id="about">
-      <div>
+      <div id="about_items">
         <Intro />
         <Links />
       </div>
