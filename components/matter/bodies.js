@@ -1,23 +1,8 @@
 import Matter from 'matter-js';
 import MatterAttractors from 'matter-attractors';
-
-import soundColors from './soundColors';
+import path from 'path';
 
 Matter.use(MatterAttractors);
-
-/**
- * SHAPES
- * - circles : plucks : music notes + beamed notes
- * - squares : chords : guitar
- * - hexagons : drones : piano / synth
- * SWAP SHAPES FOR MUSIC NOTE SVGs?
- */
-
-const randomOption = (shape) => {
-  const options = Object.keys(soundColors[shape]);
-  const randomIndex = Math.floor(Math.random() * options.length - 1);
-  return options[randomIndex];
-};
 
 export const createCircle = (
   x = Math.random() * (window.innerWidth * 0.8),
@@ -88,16 +73,35 @@ export const createHexagon = (
   return hexagon;
 };
 
+Matter.Common.setDecomp(require('poly-decomp'));
 
-// export const createTitle = () => {};
+var select = function(root, selector) {
+  return Array.prototype.slice.call(root.querySelectorAll(selector));
+};
 
-// export const createAppCard = () => {};
+const loadSvg = (url) => {
+  return fetch(url)
+    .then((res) => res.text())
+    .then((raw) => (new window.DOMParser()).parseFromString(raw, 'image/svg+xml'));
+};
 
-// export const createAbout = () => {};
-
-// export const createLinks = () => {};
-
-/**
- * element.attributes.width / height
- * element.x / element.y
- */
+export const createNote = (
+  x = Math.random() * (window.innerWidth * 0.8),
+  y = Math.random() * (window.innerHeight * 0.8)
+) => {
+  const svgPath = '/images/music-note.svg';
+  loadSvg(path.join(__dirname, svgPath))
+    .then((root) => {
+      const color = Matter.Common.choose(['#D8DAD3', '#A4C2A5', '#4A4A48']);
+      const vertexSets = select(root, 'path')
+      .map((path) => {
+        return Matter.Svg.pathToVertices(path, 30);
+      });
+      const body = Matter.Bodies.fromVertices(x, y, vertexSets, {
+        render: {
+          fillStyle: color,
+        }
+      });
+      return body;
+    });
+};
