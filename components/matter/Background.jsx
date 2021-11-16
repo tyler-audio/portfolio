@@ -31,44 +31,6 @@ const Background = () => {
       },
     });
 
-    // const select = function(root, selector) {
-    //   return Array.prototype.slice.call(root.querySelectorAll(selector));
-    // };
-
-    // const loadSvg = (url) => {
-    //   return fetch(url)
-    //     .then((res) => res.text())
-    //     .then((raw) => (new window.DOMParser()).parseFromString(raw, 'image/svg+xml'));
-    // };
-
-    // setInterval(() => {
-    //   const x = Math.random() * (window.innerWidth * 0.8),
-    //     y = Math.random() * (window.innerHeight * 0.8);
-    //   (['/images/musical-note.svg', '/images/music-note-beamed.svg', '/images/iconmonstr-disc-3.svg'])
-    //     .forEach((svgPath) => {
-    //       loadSvg(path.join(__dirname, svgPath))
-    //         .then((root) => {
-    //           const color = Common.choose(['#D8DAD3', '#A4C2A5', '#4A4A48']);
-
-    //           const vertexSets = select(root, 'path')
-    //             .map((p) => Vertices.scale(Svg.pathToVertices(p, 20), 0.3, 0.3));
-
-    //           Composite.add(engine.world, Bodies.fromVertices(x, y, vertexSets, {
-    //             render: {
-    //               fillStyle: color,
-    //             }
-    //           }, true));
-    //         });
-    //     })
-    // }, 750);
-
-    // const circle = createCircle(),
-    //   square = createSquare(),
-    //   hexagon = createHexagon();
-    // Composite.add(engine.world, [circle, hexagon, square]);
-    // Composite.add(engine.world, [createNote()]);
-    // console.log(createNote());
-
     // ================= Checks amount of bodies in composite ==================
 
     // setInterval(() => {

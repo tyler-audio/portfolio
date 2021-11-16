@@ -24,12 +24,12 @@ section {
 }
 
 ::selection {
-  background: #A4C2A5;
+  background: #BAD1BB;
   color: #F1F2EB;
 }
 
 ::-moz-selection {
-  background: #A4C2A5;
+  background: #BAD1BB;
   color: #F1F2EB;
 }
 
@@ -69,7 +69,7 @@ Navbar
 .nav_anchor:hover,
 .nav_anchor:focus {
   outline: none;
-  color: #A4C2A5;
+  color: #BAD1BB;
   text-decoration: underline;
 }
 
