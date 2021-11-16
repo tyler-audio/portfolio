@@ -18,7 +18,6 @@ const Background = () => {
 
   useEffect(() => {
     const bg = document.querySelector('#background');
-    // bg.height = bg * 1.5;
 
     const render = Render.create({
       canvas: bg,
@@ -31,6 +30,7 @@ const Background = () => {
       },
     });
 
+    Composite.add(engine.world, [createVinyl(), createNote(), createBeamed()])
     // ================= Checks amount of bodies in composite ==================
 
     // setInterval(() => {
@@ -52,19 +52,16 @@ const Background = () => {
     setInterval(() => {
       const bodies = Composite.allBodies(engine.world);
       for (let i = 0; i < bodies.length; i++) {
-        if (bodies[i].position.y < 0 ) Composite.remove(engine.world, bodies[i]);
+        if (bodies[i].position.y < 0) Composite.remove(engine.world, bodies[i]);
       }
     }, 5000);
 
-    engine.gravity.y = -0.05;
+    engine.gravity.y = -0.02;
 
     Render.run(render);
     const runner = Runner.create();
     Runner.run(runner, engine);
   }, []);
-
-
-
 
   return (
     <canvas id="background"></canvas>
