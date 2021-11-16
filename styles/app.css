@@ -91,17 +91,18 @@ Title Card
   color: #566246;
   font-size: 4rem;
   font-weight: 700;
+  text-align: center;
 }
 
 #title_card h1 {
   margin: auto;
-  text-shadow: #414140 0.02em 0.02em 0.04em;
+  text-shadow: #566246 0.02em 0.02em 0.04em;
 }
 
 #title_card h4{
   font-size: 2.7rem;
   margin: 1rem auto;
-  /* text-shadow: #4A4A48 0.06em 0.06em 0.04em; */
+  text-shadow: #566246 0.02em 0.02em 0.04em;
 }
 
 /* =========
@@ -205,8 +206,8 @@ Applications
 
 #apps_title {
   font-size: 5rem;
-  font-weight: 700;
-  text-shadow: #414140 0.02em 0.02em 0.04em;
+  font-weight: 600;
+  text-shadow: #566246 0.02em 0.02em 0.04em;
   /* margin: 0 0 0.5em 0; */
   color: #566246;
 }
@@ -224,9 +225,9 @@ Applications
   /* border-radius: 1em; */
 }
 
-.app_card_title {
-  /* position: absolute; */
-}
+/* .app_card_title {
+  position: absolute;
+} */
 
 /* =========
 Embla Carousel

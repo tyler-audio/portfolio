@@ -8,7 +8,7 @@ const AppsCard = ({ project }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: false, draggable: false, speed: 4 },
     [Autoplay(
-      { delay: 4000, stopOnInteraction: false },
+      { delay: 5000, stopOnInteraction: false },
       (emblaRoot) => emblaRoot.parentElement
     )]
   );

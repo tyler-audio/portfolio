@@ -1,17 +1,19 @@
 import Matter from 'matter-js';
 import MatterAttractors from 'matter-attractors';
-import path from 'path';
 
 Matter.use(MatterAttractors);
 
-export const createCircle = (
+const options = ['mint', 'lite', 'drk'];
+const selectOption = () => {
+  return Matter.Common.choose(options);
+};
+
+export const createVinyl = (
   x = Math.random() * (window.innerWidth * 0.8),
   y = Math.random() * (window.innerHeight * 0.8),
-  radius = 40
 ) => {
-  // const options = randomOption(circle.label);
-  const circle = Matter.Bodies.circle(x, y, radius, {
-    label: 'circle',
+  const vinyl = Matter.Bodies.circle(x, y, 51.2, {
+    label: 'vinyl',
     friction: 0,
     frictionAir: 0,
     frictionStatic: 0,
@@ -20,88 +22,63 @@ export const createCircle = (
       group: 1,
     },
     render: {
-      fillStyle: '#A4C2A5',
+      sprite: {
+        texture: `/images/vinyl-${selectOption()}.png`,
+        xScale: 0.2,
+        yScale: 0.2,
+      },
     },
   });
-  circle.sound = 'pluck-04.wav';
 
-  return circle;
+  return vinyl;
 }
-
-export const createSquare = (
-  x = Math.random() * (window.innerWidth * 0.8),
-  y = Math.random() * (window.innerHeight * 0.8),
-  width = 70,
-  height = 70
-) => {
-  const square = Matter.Bodies.rectangle(x, y, width, height, {
-    label: 'square',
-    friction: 0,
-    frictionAir: 0,
-    frictionStatic: 0,
-    restitution: 0.8,
-    collisionFilter: {
-      group: 1,
-    },
-    render: {
-      fillStyle: '#787876',
-    },
-  });
-
-  return square;
-};
-
-export const createHexagon = (
-  x = Math.random() * (window.innerWidth * 0.8),
-  y = Math.random() * (window.innerHeight * 0.8),
-  radius = 40
-) => {
-  const hexagon = Matter.Bodies.polygon(x, y, 6, radius, {
-    label: 'hexagon',
-    friction: 0,
-    frictionAir: 0,
-    frictionStatic: 0,
-    restitution: 0.8,
-    collisionFilter: {
-      group: 1,
-    },
-    render: {
-      fillStyle: '#D8DAD3',
-    },
-  });
-
-  return hexagon;
-};
-
-Matter.Common.setDecomp(require('poly-decomp'));
-
-var select = function(root, selector) {
-  return Array.prototype.slice.call(root.querySelectorAll(selector));
-};
-
-const loadSvg = (url) => {
-  return fetch(url)
-    .then((res) => res.text())
-    .then((raw) => (new window.DOMParser()).parseFromString(raw, 'image/svg+xml'));
-};
 
 export const createNote = (
   x = Math.random() * (window.innerWidth * 0.8),
-  y = Math.random() * (window.innerHeight * 0.8)
+  y = Math.random() * (window.innerHeight * 0.8),
 ) => {
-  const svgPath = '/images/music-note.svg';
-  loadSvg(path.join(__dirname, svgPath))
-    .then((root) => {
-      const color = Matter.Common.choose(['#D8DAD3', '#A4C2A5', '#4A4A48']);
-      const vertexSets = select(root, 'path')
-      .map((path) => {
-        return Matter.Svg.pathToVertices(path, 30);
-      });
-      const body = Matter.Bodies.fromVertices(x, y, vertexSets, {
-        render: {
-          fillStyle: color,
-        }
-      });
-      return body;
-    });
+  const note = Matter.Bodies.rectangle(x, y, 102.4, 102.4, {
+    label: 'note',
+    friction: 0,
+    frictionAir: 0,
+    frictionStatic: 0,
+    restitution: 0.8,
+    collisionFilter: {
+      group: 1,
+    },
+    render: {
+      sprite: {
+        texture: `/images/music-note-${selectOption()}.png`,
+        xScale: 0.2,
+        yScale: 0.2,
+      }
+    },
+  });
+
+  return note;
+};
+
+export const createBeamed = (
+  x = Math.random() * (window.innerWidth * 0.8),
+  y = Math.random() * (window.innerHeight * 0.8),
+) => {
+  const beamed = Matter.Bodies.rectangle(x, y, 102.4, 102.4, {
+    label: 'beamed',
+    friction: 0,
+    frictionAir: 0,
+    frictionStatic: 0,
+    restitution: 0.8,
+    collisionFilter: {
+      group: 1,
+    },
+    render: {
+      sprite: {
+        texture: `/images/music-beam-${selectOption()}.png`,
+        xScale: 0.2,
+        yScale: 0.2,
+      }
+    },
+  });
+
+  return beamed;
 };
