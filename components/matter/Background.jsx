@@ -57,6 +57,7 @@ const Background = () => {
     }, 5000);
 
     engine.gravity.y = -0.02;
+    engine.gravity.x = 0.005;
 
     Render.run(render);
     const runner = Runner.create();

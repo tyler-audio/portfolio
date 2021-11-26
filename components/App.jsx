@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
 import Title from './title/Title'
-import Applications from './applications/Applications';
 import About from './about/About';
+import Applications from './applications/Applications';
 import Background from './matter/Background';
 
 const App = () => {

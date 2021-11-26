@@ -24,7 +24,7 @@ const AppsCard = ({ project }) => {
             <div className="embla__slide" key={i}>
               <img
                 className="app_image"
-                src={`https://tj-portfolio-media.s3.us-west-1.amazonaws.com/${project}/${project}${i}.png`}
+                src={`/projects/${project}${i}.png`}
                 key={i}
               />
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AppsCardList from './AppsCardList';
+import ScrollBtn from './ScrollBtn';
 
 const Applications = () => {
   return (
@@ -10,6 +11,7 @@ const Applications = () => {
           Projects
         </h1>
         <AppsCardList />
+        {/* <ScrollBtn /> */}
       </div>
     </section>
   );
