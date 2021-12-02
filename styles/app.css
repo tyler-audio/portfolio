@@ -1,0 +1,38 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Genos', sans-serif;
+  background-color: #F1F2EB;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #BAD1BB;
+  color: #F1F2EB;
+}
+
+::-moz-selection {
+  background: #BAD1BB;
+  color: #F1F2EB;
+}
+
+/* HOME */
+
+
+
+/* BACKGROUND */
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}

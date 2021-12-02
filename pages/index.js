@@ -1,5 +1,5 @@
-import App from '../components/App.jsx';
+import Title from '../components/Title.jsx';
 
-const HomePage = () => <App />
+const HomePage = () => <Title />
 
 export default HomePage;
