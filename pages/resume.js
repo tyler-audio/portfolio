@@ -1,3 +1,13 @@
-const Resume = () => <div>Resume</div>;
+const Resume = () => (
+  <section>
+    <a id="resume" href="files/TylerJonesResume.pdf" download>
+      <img
+        src="/images/resume.jpg"
+        id="resume_img"
+        alt="Click to download a PDF copy of my resume"
+      />
+    </a>
+  </section>
+);
 
 export default Resume;

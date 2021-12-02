@@ -25,13 +25,75 @@ body {
 
 section {
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
   /* width: 100%; */
 }
 
 /* HOME */
 
 /* PROJECTS */
+
+/* ======== CONTACT ======== */
+
+/* .envelope {
+  position: relative;
+}
+
+.envelope > * {
+  position: absolute;
+  transition: 0.1s ease-in-out;
+}
+
+.envelope:hover > .top_fold {
+  transform: translateY(-5em) rotateX(180deg);
+}
+
+.back_fold,
+.top_fold,
+.env_body {
+  width: 18em;
+}
+
+.back_fold,
+.env_body,
+.left_fold,
+.right_fold {
+  height: 10em;
+}
+
+.back_fold {
+  background-color: #566246;
+  z-index: 1;
+}
+
+.top_fold {
+  background-color: #BAD1BB;
+  height: 5em;
+  clip-path: polygon(50% 5em, 0 0, 100% 0);
+  z-index: 4;
+}
+
+.env_body {
+  background-color: #4A4A48;
+  z-index: 3;
+  clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+}
+
+.left_fold,
+.right_fold {
+  background-color: #D8DAD3;
+  width: 9em;
+  z-index: 4;
+}
+
+.left_fold {
+  clip-path: polygon(0 100%, 0 0, 100% 50%);
+}
+
+.right_fold {
+  margin-left: 9em;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+} */
 
 /* ======== EMBLA CAROUSEL ======== */
 
@@ -45,6 +107,16 @@ section {
 .embla__slide {
   position: relative;
   flex: 0 0 100%;
+}
+
+/* ======== RESUME ======== */
+
+/* #resume {
+  margin: 0 auto 4% auto;
+} */
+
+#resume_img {
+  box-shadow: #566246 0.3em 0.3em 0.3em;
 }
 
 /* ======== BACKGROUND ======== */

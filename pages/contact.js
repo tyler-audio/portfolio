@@ -34,7 +34,19 @@ const Contact = () => {
       </div>
       <div>
         <h3>Get in touch!</h3>
-        <div>ENVELOPE</div>
+        <div className="envelope">
+          <div className="back_fold" />
+          <div className="letter">
+            <div className="letter_border" />
+            <div className="letter_text" />
+            <div className="letter_stamp" />
+          </div>
+          <div className="top_fold" />
+          <div className="left_fold" />
+          <div className="right_fold" />
+          <div className="env_body" />
+        </div>
+        <div className="env_shadow" />
       </div>
     </section>
   )

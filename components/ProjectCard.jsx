@@ -22,7 +22,7 @@ const ProjectCard = ({ project, info }) => {
         <div className="embla__container">
           {images.map((i) => (
             <div className="embla__slide" key={i}>
-                <img className="project_image" src={`/projects/${project}${i}.png`} key={i}/>
+                <img className="project_image" src={`/projects/${project}${i}.png`}/>
             </div>
           ))}
         </div>
@@ -39,6 +39,9 @@ const ProjectCard = ({ project, info }) => {
         <div>
           <p>{info.description}</p>
           <menu>
+            {info.url ? <li><a href={info.url}>Website</a></li> : null}
+            <li><a href={info.github}>Github</a></li>
+            {info.hasDemo ? <li><a href="/projects">Demo</a></li> : null}
           </menu>
         </div>
       </div>
