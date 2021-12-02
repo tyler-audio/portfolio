@@ -23,11 +23,31 @@ body {
   color: #F1F2EB;
 }
 
+section {
+  display: flex;
+  height: 100vh;
+  /* width: 100%; */
+}
+
 /* HOME */
 
+/* PROJECTS */
 
+/* ======== EMBLA CAROUSEL ======== */
 
-/* BACKGROUND */
+.embla {
+  position: relative;
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+}
+
+/* ======== BACKGROUND ======== */
 
 #background {
   position: fixed;

@@ -4,10 +4,10 @@ import Navbar from './Navbar';
 
 const Title = () => {
   return (
-    <div id="title">
+    <header id="title">
       <h1>Tyler Jones</h1>
       <Navbar />
-    </div>
+    </header>
   );
 };
 
