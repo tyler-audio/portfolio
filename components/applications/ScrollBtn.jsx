@@ -2,7 +2,7 @@ import React from 'react';
 
 const ScrollBtn = () => {
   return (
-    <button>Scroll</button>
+    <a className="scroll_btn" href="#top">Back To Top</a>
   );
 };
 

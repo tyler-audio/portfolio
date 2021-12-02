@@ -5,12 +5,30 @@ const Links = () => {
 
   return (
     <div id="links">
-      <a href="" className="social_link" id="contact_btn">
+      {/* <a href="" className="social_link" id="contact_btn">
         Contact Me
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
           <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
         </svg>
-      </a>
+      </a> */}
+
+      <menu className="contact_btn">
+        <a className="trigger" onClick={(e) => { e.target.parentElement.classList.toggle('open') }}>Contact Me</a>
+        <a
+          href="mailto:tylerj.audio94@gmail.com"
+          target="_blank"
+          className="action"
+        >
+          Email
+        </a>
+        <a
+          href="https://tj-portfolio-media.s3.us-west-1.amazonaws.com/Tyler+Jones+Resume.pdf"
+          target="_blank"
+          className="action"
+        >
+          Resume
+        </a>
+      </menu>
 
       <a
         href="https://www.linkedin.com/in/tyler-jones-audio/"
@@ -42,3 +60,10 @@ const Links = () => {
 };
 
 export default Links;
+
+/**
+ * <menu className="open">
+ *  <a><i className="fa-regular fa-envelope"></i></a>
+ *  <a><i className="fa-regular fa-file"></i></a>
+ * </menu>
+ */

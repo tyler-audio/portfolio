@@ -11,8 +11,8 @@ const Applications = () => {
           Projects
         </h1>
         <AppsCardList />
-        {/* <ScrollBtn /> */}
       </div>
+      <ScrollBtn />
     </section>
   );
 };
