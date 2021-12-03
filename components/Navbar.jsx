@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const Navbar = () => {
-  const pages = ['home', 'about', 'projects', 'contact', 'resume'];
+  const pages = ['home', 'about', 'projects', 'resume'];
 
   return (
     <nav className="navbar" id="navbar">

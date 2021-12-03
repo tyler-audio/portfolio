@@ -35,13 +35,13 @@ section {
 
 /* ======== CONTACT ======== */
 
-/* .envelope {
+.envelope {
   position: relative;
 }
 
 .envelope > * {
   position: absolute;
-  transition: 0.1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .envelope:hover > .top_fold {
@@ -93,7 +93,7 @@ section {
 .right_fold {
   margin-left: 9em;
   clip-path: polygon(100% 0, 0 50%, 100% 100%);
-} */
+}
 
 /* ======== EMBLA CAROUSEL ======== */
 
