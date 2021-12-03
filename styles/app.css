@@ -37,62 +37,229 @@ section {
 
 .envelope {
   position: relative;
+  width: 12em;
+  height: 12em;
+  cursor: pointer;
+  /* background-color: black; */
 }
 
-.envelope > * {
+.animated {
   position: absolute;
-  transition: 0.5s ease-in-out;
+  width: 12em;
+  height: 7em;
+  transition: 0.4s;
+  /* background-color: #566246; */
 }
 
-.envelope:hover > .top_fold {
-  transform: translateY(-5em) rotateX(180deg);
+.animated > * {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
 }
 
-.back_fold,
-.top_fold,
 .env_body {
-  width: 18em;
-}
-
-.back_fold,
-.env_body,
-.left_fold,
-.right_fold {
-  height: 10em;
-}
-
-.back_fold {
-  background-color: #566246;
-  z-index: 1;
+  bottom: 0;
+  border-width: 0 0 7em 12em;
+  border-color: transparent transparent #BEC2B5 transparent;
+  z-index: 4;
 }
 
 .top_fold {
-  background-color: #BAD1BB;
-  height: 5em;
-  clip-path: polygon(50% 5em, 0 0, 100% 0);
+  top: 0;
+  border-width: 3.5em 6.1em 0 6em;
+  transform-origin: 50% 0%;
+  transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+  border-color: #8B917B transparent transparent transparent;
   z-index: 4;
 }
 
-.env_body {
-  background-color: #4A4A48;
-  z-index: 3;
-  clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
-}
-
-.left_fold,
-.right_fold {
-  background-color: #D8DAD3;
-  width: 9em;
-  z-index: 4;
+.back_fold {
+  bottom: 0;
+  width: 12em;
+  height: 7em;
+  background: #6F7561;
+  z-index: 2;
 }
 
 .left_fold {
-  clip-path: polygon(0 100%, 0 0, 100% 50%);
+  bottom: 0;
+  border-width: 3.5em 0 3.5em 6.1em;
+  border-color: transparent transparent transparent #A4A998;
+  z-index: 4;
 }
 
-.right_fold {
-  margin-left: 9em;
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+.letter {
+  left: 0.5em;
+  bottom: 0;
+  width: 11em;
+  height: 5em;
+  background: #D8DAD3;
+  z-index: 3;
+  overflow: hidden;
+  transition: 0.4s 0.2s;
+}
+
+.letter_border {
+  height: 0.5em;
+  width: 100%;
+  background: repeating-linear-gradient(-45deg, #566246, #566246 .4em, transparent 0.4em, transparent 0.8em);
+}
+
+.letter_title {
+  margin-top: 0.8em;
+  margin-left: 0.2em;
+  height: 0.6em;
+  width: 30%;
+  background: #566246;
+}
+
+.letter_text {
+  margin-top: 0.8em;
+  margin-left: 0.2em;
+  height: 0.6em;
+  width: 20%;
+  background: #566246;
+}
+
+.letter_stamp {
+  margin-top: 1.2em;
+  margin-left: 8em;
+  width: 2em;
+  height: 2em;
+  background: #A4C2A5;
+  border-radius: 100%;
+  opacity: 0.8;
+}
+
+.shadow {
+  position: absolute;
+  top: 9em;
+  left: 50%;
+  width: 24em;
+  height: 2em;
+  transition: 0.4s;
+  transform: translateX(-50%);
+  transition: 0.4s;
+  border-radius:100%;
+  background: radial-gradient(rgba(86,98,70,0.5), rgba(86,98,70,0), rgba(86,98,70,0));
+}
+
+.envelope:hover .animated {
+  transform: translateY(1.5em);
+}
+
+.envelope:hover .top_fold {
+  transition: transform 0.4s, z-index 0.2s;
+  transform: rotateX(180deg);
+  z-index: 2;
+}
+
+.top_fold.open {
+  transform: rotateX(180deg);
+}
+
+.top_fold.close {
+  transition: transform 0.4s, z-index 0.2s;
+  transition-delay: 0.8s;
+  transform: rotateX(0deg);
+}
+
+.envelope:hover .letter {
+  height: 12em;
+}
+
+.envelope:hover .shadow {
+  width: 12em;
+}
+
+.letter.open {
+  animation: flyout 0.75s;
+  transition: opacity 0.1s;
+  opacity: 0;
+}
+
+.letter.close {
+  animation: flyin 0.75s;
+}
+
+@keyframes flyout {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes flyin {
+  0% {
+    opacity: 1;
+    transform: translateY(-100vh);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+/* ======== CONTACT FORM ======== */
+
+.form_wrapper {
+  width: 100%;
+  /* display: none; */
+  height: 100vh;
+  position: relative;
+}
+
+.contact_form {
+  position: absolute;
+  padding: .4em;
+  background-color: #D8DAD3;
+  transform: translateY(-100vh);
+  /* border: 1px solid black; */
+}
+
+.contact_form.open {
+  transition: transform 0.4s ease-in-out;
+  animation: slidedown 0.7s forwards;
+  animation-delay: 0.4s;
+}
+
+.contact_form.close {
+  transition: transform 0.4s ease-in-out;
+  animation: slideup 0.7s forwards;
+}
+
+.form_border {
+  height: 7em;
+  width: 100%;
+  background: repeating-linear-gradient(-45deg, #566246, #566246 2.4em, transparent 2.4em, transparent 4.8em);
+}
+
+@keyframes slidedown {
+  0% {
+    transform: translateY(-100vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100vh);
+  }
 }
 
 /* ======== EMBLA CAROUSEL ======== */
@@ -111,9 +278,9 @@ section {
 
 /* ======== RESUME ======== */
 
-/* #resume {
+#resume {
   margin: 0 auto 4% auto;
-} */
+}
 
 #resume_img {
   box-shadow: #566246 0.3em 0.3em 0.3em;

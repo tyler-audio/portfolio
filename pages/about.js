@@ -7,8 +7,16 @@ const About = () => (
         src="/images/headshot.png"
         alt="Headshot of Tyler Jones"
       />
+      <div>
+        <h3>Hey, I'm Tyler!</h3>
+        <p>I am a full stack software developer and audio engineer with a passion for the intersection between technology and art. Through my background in music production, I have developed strong creative intuition and a unique, versatile skill set. This perspective enables me to confidently navigate and find solutions in ambiguous situations.</p>
+        <p>My initial pursuit of a career in the music industry led me to discovering the world of software engineering, where I instantly found a love for creating striking, intuitive, and innovative user interfaces. I am motivated by my ambitious nature as well as a desire to explore my passions and continue my growth both professionally and personally.</p>
+        <p>When I am not coding or creating, you will find me lost in a novel or laughing and enjoying time with loved ones.</p>
+      </div>
+    </div>
+    <div>
       <div className="social_links">
-      <h3>Get in touch!</h3>
+        <h3>Get in touch!</h3>
         <h3>
           <a
             href="https://www.linkedin.com/in/tyler-jones-audio/"
@@ -38,14 +46,109 @@ const About = () => (
             </svg>
           </a>
         </h3>
-        <div>Envelope</div>
+        {/* <div
+          className="envelope"
+          onClick={() => {
+            const letter = document.querySelector('.letter');
+            if (letter.classList.contains('close')) letter.classList.remove('close');
+            letter.classList.add('open');
+
+            const form = document.querySelector('.contact_form');
+            if (form.classList.contains('close')) form.classList.remove('close')
+            form.classList.add('open');
+
+            const topFold = document.querySelector('.top_fold');
+            if (topFold.classList.contains('close')) topFold.classList.remove('close');
+            topFold.classList.add('open');
+          }}
+        >
+          <div className="animated">
+            <div className="back_fold"></div>
+            <div className="letter">
+              <div className="letter_border"></div>
+              <div className="letter_title"></div>
+              <div className="letter_text"></div>
+              <div className="letter_stamp">
+                <div className="letter_stamp--inner"></div>
+              </div>
+            </div>
+            <div className="top_fold"></div>
+            <div className="env_body"></div>
+            <div className="left_fold"></div>
+          </div>
+          <div className="shadow"></div>
+        </div>
+        <div className="form_wrapper">
+          <div className="contact_form">
+            <div className="form_border"></div>
+            <h1>Contact Me</h1>
+            <form>
+              <label></label>
+              <input
+                type="text"
+                name="name"
+                required
+                maxLength="20"
+                placeholder="Name"
+                onInvalid={(e) => e.target.setCustomValidity('Please, leave your name')}
+              />
+
+              <label></label>
+              <input
+                type="email"
+                name="email"
+                required
+                maxLength="30"
+                placeholder="E-mail"
+                onInvalid={(e) => e.target.setCustomValidity('Please, leave your e-mail')}
+              />
+
+              <label></label>
+              <input
+                type="text"
+                name="subject"
+                required
+                maxLength="30"
+                placeholder="Subject"
+                onInvalid={(e) => e.target.setCustomValidity('Please, write a subject')}
+              />
+
+              <label></label>
+              <textarea
+                type="text"
+                name="message"
+                required
+                maxLength="240"
+                placeholder="Message"
+                onKeyUp={(e) => {
+                  const charCount = document.querySelector('.char_count');
+                  charCount.innerHTML = `${e.target.value.length}/240`;
+                }}
+                onInvalid={(e) => e.target.setCustomValidity('Please, leave me a message')}
+              />
+              <div className="char_count">0/240</div>
+
+              <button type="submit">Send</button>
+              <button
+                type="button"
+                onClick={() => {
+                  const letter= document.querySelector('.letter');
+                  letter.classList.remove('open');
+                  letter.classList.add('close');
+
+                  const form = document.querySelector('.contact_form');
+                  form.classList.remove('open');
+                  form.classList.add('close');
+
+                  const topFold = document.querySelector('.top_fold');
+                  topFold.classList.remove('open');
+                  topFold.classList.add('close');
+                }}
+              >Scrap</button>
+            </form>
+          </div>
+        </div> */}
       </div>
-    </div>
-    <div>
-      <h3>Hey, I'm Tyler!</h3>
-      <p>I am a full stack software developer and audio engineer with a passion for the intersection between technology and art. Through my background in music production, I have developed strong creative intuition and a unique, versatile skill set. This perspective enables me to confidently navigate and find solutions in ambiguous situations.</p>
-      <p>My initial pursuit of a career in the music industry led me to discovering the world of software engineering, where I instantly found a love for creating striking, intuitive, and innovative user interfaces. I am motivated by my ambitious nature as well as a desire to explore my passions and continue my growth both professionally and personally.</p>
-      <p>When I am not coding or creating, you will find me lost in a novel or laughing and enjoying time with loved ones.</p>
       <div>
         <h3>Technical Skills</h3>
         <div>
@@ -53,7 +156,7 @@ const About = () => (
             <>
               <h5>{category}</h5>
               <ul>
-                {techSkills[category].map((skill) => <li>{skill}</li>)}
+                {techSkills[category].map((skill) => <li key={skill}>{skill}</li>)}
               </ul>
             </>
           ))}
