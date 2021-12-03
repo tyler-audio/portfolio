@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar" id="navbar">
       <ul id="navbar_ul">
         {pages.map((p) => (
-          <h3>
+          <h3 key={p}>
             <Link href={p === 'home' ? '/' : `/${p}`}>
               <a className="nav_link">{p}</a>
             </Link>
