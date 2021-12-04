@@ -13,6 +13,22 @@ body {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #F1F2EB;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F1F2EB;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+  box-shadow: inset 0 0 0.2em #4A4A48;
+	background-color: #566246;
+}
+
 ::selection {
   background: #BAD1BB;
   color: #F1F2EB;

@@ -156,7 +156,7 @@ const About = () => (
         <h3 className="title">Technical Skills</h3>
         <div className="row tech_lists">
           {Object.keys(techSkills).map((category) => (
-            <div key="category">
+            <div key={category}>
               <h5 id="tech_list_title">{category}</h5>
               <ul className="tech_ul">
                 {techSkills[category].map((skill) => <li key={skill}>{skill}</li>)}
