@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
-const ProjectCard = ({ project, info }) => {
+const ProjectCard = ({ project, info, order }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: false, draggable: false, speed: 4 },
     [Autoplay(
@@ -10,13 +10,19 @@ const ProjectCard = ({ project, info }) => {
       (emblaRoot) => emblaRoot.parentElement
     )]
   );
+  useEffect(() => {
+    if (order % 2 !== 0) {
+      const projectMedia = document.querySelector(`.project_media--${order}`);
+      projectMedia.classList.add('reverse');
+    }
+  })
 
   const renderImages = () => {
     const images = [...Array(info.photos).keys()];
 
     return (
       <div
-        className="embla carousel"
+        className="embla"
         ref={emblaRef}
       >
         <div className="embla__container">
@@ -32,13 +38,15 @@ const ProjectCard = ({ project, info }) => {
 
   return (
     <div className="project_card">
-      <h3>{info.title}</h3>
-      <h5>{info.tagline}</h5>
-      <div>
-        {renderImages()}
-        <div>
+      <h3 className="title project_title">{info.title}</h3>
+      <h5 className="project_tagline">{info.tagline}</h5>
+      <div className={`row project_media--${order}`}>
+        <div className="carousel">
+          {renderImages()}
+        </div>
+        <div className="project_details">
           <p>{info.description}</p>
-          <menu>
+          <menu className="project_links row">
             {info.url ? <li><a href={info.url}>Website</a></li> : null}
             <li><a href={info.github}>Github</a></li>
             {info.hasDemo ? <li><a href="/projects">Demo</a></li> : null}

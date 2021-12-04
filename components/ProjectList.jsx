@@ -7,11 +7,12 @@ const ProjectList = () => {
 
   return (
     <div className="project_list">
-      {projects.map((p) => (
+      {projects.map((p, i) => (
         <ProjectCard
           project={p}
           key={p}
           info={projectData[p]}
+          order={i}
         />
       ))}
     </div>

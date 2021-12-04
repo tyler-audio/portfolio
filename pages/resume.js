@@ -1,5 +1,5 @@
 const Resume = () => (
-  <section>
+  <section className="row">
     <a id="resume" href="files/TylerJonesResume.pdf" download>
       <img
         src="/images/resume.jpg"

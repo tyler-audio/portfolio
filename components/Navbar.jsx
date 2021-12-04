@@ -5,10 +5,10 @@ const Navbar = () => {
   const pages = ['home', 'about', 'projects', 'resume'];
 
   return (
-    <nav className="navbar" id="navbar">
-      <ul id="navbar_ul">
+    <nav className="navbar">
+      <ul id="navbar_ul" className="row">
         {pages.map((p) => (
-          <h3 key={p}>
+          <h3 className="nav_title" key={p}>
             <Link href={p === 'home' ? '/' : `/${p}`}>
               <a className="nav_link">{p}</a>
             </Link>
