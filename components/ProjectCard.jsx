@@ -50,10 +50,26 @@ const ProjectCard = ({ project, info, order }) => {
           <menu className="project_links row">
             {info.url ? <li><a href={info.url}>Website</a></li> : null}
             <li><a href={info.github} target="_blank">Github</a></li>
-            {info.hasDemo ? <li><a href="/projects">Demo</a></li> : null}
+            {info.hasDemo ? <li><a onClick={() => {
+              const demo = document.querySelector(`.demo_${project}_modal`),
+                overlay = document.querySelector('.overlay');
+              demo.classList.toggle('active');
+              overlay.classList.toggle('active');
+            }}>Demo</a></li> : null}
           </menu>
         </div>
       </div>
+      {info.hasDemo ?
+        <>
+          <div className={`demo_${project}_modal`}>
+            <video controls>
+              <source src={`/media/${project}_demo.mp4`} type="video/mp4"/>
+            </video>
+          </div>
+        </> :
+      null
+    }
+    <div className="overlay"/>
     </div>
   );
 };

@@ -41,6 +41,7 @@ body {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .row {
@@ -217,6 +218,24 @@ form {
 
 .reverse {
   flex-direction: row-reverse;
+}
+
+[class^="demo_"] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s ease-in-out;
+  z-index: 6;
+  width: 60%;
+}
+
+[class^="demo_"] video {
+  width: 100%;
+}
+
+[class^="demo_"].active {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 /* ======== EMBLA CAROUSEL ======== */
@@ -597,7 +616,7 @@ button:hover {
   transform: translate(-0.15em, 0.15em);
 }
 
-#form_overlay {
+.overlay {
   position: fixed;
   opacity: 0;
   background-color: #4A4A48;
@@ -609,7 +628,7 @@ button:hover {
   z-index: 5;
 }
 
-#form_overlay.active {
+.overlay.active {
   opacity: 0.5;
   pointer-events: all;
 }
