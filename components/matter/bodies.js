@@ -14,7 +14,7 @@ const rotateBody = (body) => {
 
 export const createVinyl = (
   x = Math.random() * (window.innerWidth * 0.8),
-  y = window.innerHeight + 150,
+  y = window.innerHeight + 50,
 ) => {
   const vinyl = Matter.Bodies.circle(x, y, 25.6, {
     label: 'vinyl',
@@ -40,7 +40,7 @@ export const createVinyl = (
 
 export const createNote = (
   x = Math.random() * (window.innerWidth * 0.8),
-  y = window.innerHeight + 150,
+  y = window.innerHeight + 50,
 ) => {
   const note = Matter.Bodies.rectangle(x, y, 51.2, 51.2, {
     label: 'note',
@@ -66,7 +66,7 @@ export const createNote = (
 
 export const createBeamed = (
   x = Math.random() * (window.innerWidth * 0.8),
-  y = window.innerHeight + 150,
+  y = window.innerHeight + 50,
 ) => {
   const beamed = Matter.Bodies.rectangle(x, y, 51.2, 51.2, {
     label: 'beamed',

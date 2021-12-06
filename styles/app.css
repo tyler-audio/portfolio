@@ -39,12 +39,6 @@ body {
   color: #F1F2EB;
 }
 
-/* section {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-} */
-
 a {
   text-decoration: none;
 }
@@ -56,6 +50,67 @@ a {
 strong {
   color: #566246;
   text-decoration: underline;
+}
+
+label {
+  width: 100%;
+  text-align: center;
+}
+
+input {
+  width: 94%;
+  height: 2em;
+  border: none;
+  border-bottom: 2px solid #F1F2EB;
+  background-color: #D8DAD3;
+}
+
+textarea {
+  height: 8em;
+  width: 80%;
+  border: 2px solid #F1F2EB;
+  background-color: #D8DAD3;
+}
+
+label + label,
+textarea {
+  margin-top: 2.5%;
+}
+
+input,
+textarea {
+  font-size: 1.2rem;
+  color: #4A4A48;
+}
+
+input:hover,
+textarea:hover {
+  transform: scale(0.98);
+}
+
+input:focus {
+  outline: none !important;
+  border: none;
+  border-bottom: 2px solid #F1F2EB;
+  box-shadow: 0 1em 1em -1em #F1F2EB;
+}
+
+textarea:focus {
+  outline: none !important;
+  border: 2px solid #F1F2EB;
+  box-shadow: 0 0 1em #F1F2EB;
+}
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+::placeholder {
+  color: #4A4A48;
+  font-size: 1.2rem;
+  opacity: 0.6;
 }
 
 .title {
@@ -72,11 +127,11 @@ strong {
   margin: 3% 0 4% 0;
 }
 
-#name_title {
+#name_title,
+.thankyou_title {
   text-align: center;
   font-size: 4rem;
   margin-bottom: 2%;
-  /* margin: 0 0 0.5em 0; */
   color: #566246;
   text-shadow: #566246 0.03em 0.03em 0.08em;
 }
@@ -119,10 +174,6 @@ strong {
 .project_card {
   padding: 4%;
 }
-
-/* .project_card + .project_card {
-  margin-top: 7%;
-} */
 
 .project_title,
 .project_tagline {
@@ -302,7 +353,6 @@ strong {
   width: 12em;
   height: 12em;
   cursor: pointer;
-  /* background-color: black; */
 }
 
 .animated {
@@ -310,7 +360,6 @@ strong {
   width: 12em;
   height: 7em;
   transition: 0.4s;
-  /* background-color: #566246; */
 }
 
 .animated > * {
@@ -472,26 +521,31 @@ strong {
 
 /* ======== CONTACT FORM ======== */
 
-/* .form_wrapper {
-  width: 100%; */
-  /* display: none; */
-  /* height: 100vh; */
-/* } */
+.form_wrapper {
+  pointer-events: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .contact_form {
-  margin-top: 5%;
+  height: 80%;
+  width: 60%;
   position: absolute;
   padding: .4em;
   background-color: #D8DAD3;
-  top: 50%;
-  transform: translate(-50%) translateY(-200vh);
-  /* border: 1px solid black; */
+  transform: translateY(-200vh);
+  z-index: 6;
 }
 
 .contact_form.open {
   transition: transform 0.4s ease-in-out;
   animation: slidedown 0.7s forwards;
   animation-delay: 0.4s;
+  pointer-events: all;
 }
 
 .contact_form.close {
@@ -503,6 +557,61 @@ strong {
   height: 7em;
   width: 100%;
   background: repeating-linear-gradient(-45deg, #566246, #566246 2.4em, transparent 2.4em, transparent 4.8em);
+}
+
+.contact_title {
+  text-align: center;
+  font-size: 4em;
+  margin: 0;
+}
+
+.char_count {
+  color: #4A4A48;
+  margin: 0 auto;
+  width: 80%;
+  text-align: end;
+}
+
+.form_buttons {
+  margin: 0 auto;
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+button {
+  padding: 0.4em;
+  width: 4em;
+  cursor: pointer;
+  border: none;
+  border-radius: 10em;
+  background-color: #566246;
+  box-shadow: #4A4A48 -0.15em 0.15em 0.04em;
+  color: #F1F2EB;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  outline: none;
+  box-shadow: none;
+  transform: translate(-0.15em, 0.15em);
+}
+
+#form_overlay {
+  position: fixed;
+  opacity: 0;
+  background-color: #4A4A48;
+  transition: 0.2s ease-in-out;
+  transition-delay: 0.44s;
+  width: 1000%;
+  height: 1000%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#form_overlay.active {
+  opacity: 0.5;
+  pointer-events: all;
 }
 
 @keyframes slidedown {
@@ -527,10 +636,6 @@ strong {
 
 /* ======== RESUME ======== */
 
-/* #resume_wrapper {
-  display: flex;
-} */
-
 #resume {
   margin: 2% auto 4% auto;
 }
@@ -538,6 +643,21 @@ strong {
 #resume_img {
   width: 100%;
   box-shadow: #566246 0.3em 0.3em 0.3em;
+}
+
+/* ======== THANK YOU ======== */
+
+.thankyou_items {
+  width: 40%;
+  margin: auto;
+}
+
+.thankyou_title {
+  font-size: 3.5em;
+}
+
+.thankyou_note {
+  text-align: center;
 }
 
 /* ======== BACKGROUND ======== */

@@ -6,10 +6,11 @@ const ProjectCard = ({ project, info, order }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: false, draggable: false, speed: 4 },
     [Autoplay(
-      { delay: 5000, stopOnInteraction: false },
+      { delay: 7000, stopOnInteraction: false },
       (emblaRoot) => emblaRoot.parentElement
     )]
   );
+
   useEffect(() => {
     if (order % 2 !== 0) {
       const projectMedia = document.querySelector(`.project_media--${order}`);
@@ -48,7 +49,7 @@ const ProjectCard = ({ project, info, order }) => {
           <p>{info.description}</p>
           <menu className="project_links row">
             {info.url ? <li><a href={info.url}>Website</a></li> : null}
-            <li><a href={info.github}>Github</a></li>
+            <li><a href={info.github} target="_blank">Github</a></li>
             {info.hasDemo ? <li><a href="/projects">Demo</a></li> : null}
           </menu>
         </div>
