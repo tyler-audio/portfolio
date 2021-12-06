@@ -5,7 +5,7 @@ const About = () => {
     const letter= document.querySelector('.letter'),
       form = document.querySelector('.contact_form'),
       topFold = document.querySelector('.top_fold'),
-      overlay = document.querySelector('.overlay');
+      overlay = document.querySelector('.form_overlay');
 
     const openForm = () => {
       if (letter.classList.contains('close')) letter.classList.remove('close');
@@ -113,7 +113,7 @@ const About = () => {
               </form>
             </div>
             <div
-              className="overlay"
+              className="form_overlay"
               onClick={() => {
                 if (closeForm) {
                   closeForm();

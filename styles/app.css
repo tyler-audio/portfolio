@@ -225,7 +225,7 @@ form {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: 0.2s ease-in-out;
+  transition: 0.4s ease-in-out;
   z-index: 6;
   width: 60%;
 }
@@ -236,6 +236,18 @@ form {
 
 [class^="demo_"].active {
   transform: translate(-50%, -50%) scale(1);
+}
+
+.demo_overlay {
+  position: fixed;
+  opacity: 0;
+  background-color: #4A4A48;
+  transition: 0.4s ease-in-out;
+  /* transition-delay: 0.44s; */
+  width: 1000%;
+  height: 1000%;
+  pointer-events: none;
+  z-index: 5;
 }
 
 /* ======== EMBLA CAROUSEL ======== */
@@ -616,7 +628,7 @@ button:hover {
   transform: translate(-0.15em, 0.15em);
 }
 
-.overlay {
+.form_overlay {
   position: fixed;
   opacity: 0;
   background-color: #4A4A48;
@@ -628,7 +640,8 @@ button:hover {
   z-index: 5;
 }
 
-.overlay.active {
+.form_overlay.active,
+.demo_overlay.active {
   opacity: 0.5;
   pointer-events: all;
 }

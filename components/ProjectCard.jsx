@@ -11,6 +11,16 @@ const ProjectCard = ({ project, info, order }) => {
     )]
   );
 
+  if (process.browser) {
+    const demo = document.querySelector(`.demo_${project}_modal`),
+      overlay = document.querySelector('.demo_overlay');
+
+    const toggleDemo = () => {
+      demo.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+  }
+
   useEffect(() => {
     if (order % 2 !== 0) {
       const projectMedia = document.querySelector(`.project_media--${order}`);
@@ -51,10 +61,11 @@ const ProjectCard = ({ project, info, order }) => {
             {info.url ? <li><a href={info.url}>Website</a></li> : null}
             <li><a href={info.github} target="_blank">Github</a></li>
             {info.hasDemo ? <li><a onClick={() => {
-              const demo = document.querySelector(`.demo_${project}_modal`),
-                overlay = document.querySelector('.overlay');
-              demo.classList.toggle('active');
-              overlay.classList.toggle('active');
+              if (toggleDemo) {
+                toggleDemo();
+              } else {
+                alert('Please, try again')
+              }
             }}>Demo</a></li> : null}
           </menu>
         </div>
@@ -69,7 +80,16 @@ const ProjectCard = ({ project, info, order }) => {
         </> :
       null
     }
-    <div className="overlay"/>
+    <div
+      className="demo_overlay"
+      onClick={() => {
+        if (toggleDemo) {
+          toggleDemo();
+        } else {
+          alert('Please, try again')
+        }
+      }}
+    />
     </div>
   );
 };
