@@ -76,7 +76,7 @@ const About = () => {
                   />
                 </label>
 
-                <label>
+                <label id="textarea">
                   <textarea
                     type="text"
                     name="message"

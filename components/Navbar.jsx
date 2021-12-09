@@ -6,15 +6,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <ul id="navbar_ul" className="row">
+      <menu id="navbar_menu" className="row">
         {pages.map((p) => (
-          <h3 className="nav_title" key={p}>
-            <Link href={p === 'home' ? '/' : `/${p}`}>
-              <a className="nav_link">{p}</a>
-            </Link>
-          </h3>
+          <div className="nav_title" key={p}>
+            <a className="nav_link" href={p === 'home' ? '/' : `/${p}`}>{p}</a>
+          </div>
         ))}
-      </ul>
+      </menu>
     </nav>
   );
 };

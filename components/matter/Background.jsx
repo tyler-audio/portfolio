@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import Matter, { Body, IEventCollision } from 'matter-js';
 
-// import MatterAttractors from 'matter-attractors';
-
 import { createVinyl, createNote, createBeamed } from './bodies.js';
 
-
-// Matter.use(MatterAttractors);
 
 const Background = () => {
   const Engine = Matter.Engine,

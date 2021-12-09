@@ -60,7 +60,6 @@ export const createNote = (
     },
   });
 
-  // rotateBody(note);
   return note;
 };
 
@@ -86,6 +85,5 @@ export const createBeamed = (
     },
   });
 
-  // rotateBody(beamed);
   return beamed;
 };
