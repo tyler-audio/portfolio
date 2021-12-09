@@ -61,7 +61,7 @@ const Background = () => {
   }, []);
 
   return (
-    <canvas id="background"></canvas>
+    <canvas id="background"/>
   );
 };
 

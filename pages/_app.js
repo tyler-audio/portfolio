@@ -9,7 +9,7 @@ const myApp = ({Component, pageProps}) => {
         <title>Tyler Jones</title>
       </Head>
       <Component {...pageProps} />
-      <Background />
+      {/* <Background /> */}
     </>
   )
 };

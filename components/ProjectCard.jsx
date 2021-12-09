@@ -21,12 +21,12 @@ const ProjectCard = ({ project, info, order }) => {
     }
   }
 
-  useEffect(() => {
-    if (order % 2 !== 0) {
-      const projectMedia = document.querySelector(`.project_media--${order}`);
-      projectMedia.classList.add('reverse');
-    }
-  })
+  // useEffect(() => {
+  //   if (order % 2 !== 0) {
+  //     const projectMedia = document.querySelector(`.project_media--${order}`);
+  //     projectMedia.classList.add('reverse');
+  //   }
+  // })
 
   const renderImages = () => {
     const images = [...Array(info.photos).keys()];
@@ -51,7 +51,7 @@ const ProjectCard = ({ project, info, order }) => {
     <div className="project_card">
       <h3 className="title project_title">{info.title}</h3>
       <h5 className="project_tagline">{info.tagline}</h5>
-      <div className={`row project_media--${order}`}>
+      <div className={`project_media--${order} row`}>
         <div className="carousel">
           {renderImages()}
         </div>
