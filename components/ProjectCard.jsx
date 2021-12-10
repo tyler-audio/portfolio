@@ -21,12 +21,12 @@ const ProjectCard = ({ project, info, order }) => {
     }
   }
 
-  // useEffect(() => {
-  //   if (order % 2 !== 0) {
-  //     const projectMedia = document.querySelector(`.project_media--${order}`);
-  //     projectMedia.classList.add('reverse');
-  //   }
-  // })
+  useEffect(() => {
+    if (order % 2 !== 0) {
+      const projectMedia = document.querySelector(`.project_media--${order}`);
+      projectMedia.classList.add('reverse');
+    }
+  })
 
   const renderImages = () => {
     const images = [...Array(info.photos).keys()];
@@ -39,7 +39,7 @@ const ProjectCard = ({ project, info, order }) => {
         <div className="embla__container">
           {images.map((i) => (
             <div className="embla__slide" key={i}>
-                <img className="project_image" src={`/projects/${project}${i}.png`}/>
+                <img className="project_image" alt={`Feature of ${info.title} project`} src={`/projects/${project}${i}.png`}/>
             </div>
           ))}
         </div>
@@ -49,17 +49,17 @@ const ProjectCard = ({ project, info, order }) => {
 
   return (
     <div className="project_card">
-      <h3 className="title project_title">{info.title}</h3>
-      <h5 className="project_tagline">{info.tagline}</h5>
+      <h2 className="title project_title">{info.title}</h2>
+      <h3 className="project_tagline">{info.tagline}</h3>
       <div className={`project_media--${order} row`}>
         <div className="carousel">
           {renderImages()}
         </div>
         <div className="project_details">
           <p>{info.description}</p>
-          <menu className="project_links row">
-            {info.url ? <li><a href={info.url}>Website</a></li> : null}
-            <li><a href={info.github} target="_blank">Github</a></li>
+          <ul className="project_links row">
+            {info.url ? <li><a href={info.url} rel="noopener noreferrer" target="_blank">Website</a></li> : null}
+            <li><a href={info.github} rel="noopener noreferrer" target="_blank">Github</a></li>
             {info.hasDemo ? <li><a onClick={() => {
               if (toggleDemo) {
                 toggleDemo();
@@ -67,7 +67,7 @@ const ProjectCard = ({ project, info, order }) => {
                 alert('Please, try again')
               }
             }}>Demo</a></li> : null}
-          </menu>
+          </ul>
         </div>
       </div>
       {info.hasDemo ?
