@@ -26,12 +26,7 @@ const Background = () => {
       },
     });
 
-    Composite.add(engine.world, [createVinyl(), createNote(), createBeamed()])
-    // ================= Checks amount of bodies in composite ==================
-
-    // setInterval(() => {
-    //   console.log(Composite.allBodies(engine.world).length);
-    // }, 50);
+    Composite.add(engine.world, [createVinyl(), createNote(), createBeamed()]);
 
     setInterval(() => {
       Composite.add(engine.world, [createVinyl()]);
