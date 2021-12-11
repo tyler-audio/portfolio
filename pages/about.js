@@ -40,7 +40,7 @@ const About = () => {
               <div className="form_border"></div>
               <h1 className="title contact_title">Contact Me</h1>
               <form action="https://formsubmit.co/e932efb2dddd95fceef701b75cce0bf4" method="POST">
-                {/* <input type="hidden" name="_next" value={`${process.env.HOST}/thankyou`}/> */}
+                <input type="hidden" name="_next" value={`${process.env.HOST}/thankyou`}/>
                 <input type="hidden" name="_captcha" value="false" />
 
                 <label>
