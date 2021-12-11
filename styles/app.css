@@ -149,7 +149,7 @@ form {
 .thankyou_title {
   text-align: center;
   font-size: 4rem;
-  margin-bottom: 2%;
+  margin: 3% 0;
   color: #566246;
   text-shadow: #566246 0.03em 0.03em 0.08em;
 }
