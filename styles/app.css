@@ -142,7 +142,7 @@ form {
 /* ======== TITLE ======== */
 
 #header_title {
-  margin: 3% 0 4% 0;
+  margin: 0 0 4% 0;
 }
 
 #name_title,
@@ -896,7 +896,7 @@ button:hover {
 
   #name_title {
     margin-top: 5%;
-    font-size: 2.7rem;
+    font-size: 3rem;
   }
 
   .nav_link {

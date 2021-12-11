@@ -7,6 +7,7 @@ class myDocument extends Document {
       <Html lang="en-US">
         <Head>
           <meta name="description" content="Tyler Jones Portfolio"/>
+          <meta property="og:image" content="/images/portfoliothumbnail.png"/>
         </Head>
         <body>
           <Title />
