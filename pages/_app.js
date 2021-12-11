@@ -6,6 +6,7 @@ const myApp = ({Component, pageProps}) => {
     <>
       <Head>
         <title>Tyler Jones</title>
+        <meta property="og:image" content="/images/websiteimage.png"/>
       </Head>
       <Component {...pageProps} />
     </>
