@@ -9,7 +9,7 @@ const HomePage = () => {
           muted={true}
           disablePictureInPicture={true}
           disableRemotePlayback={true}
-          playsInLine={true}
+          playsInline={true}
         />
     </section>
   )
