@@ -26,19 +26,14 @@
     "embla-carousel-react": "^6.0.0",
     "matter-attractors": "^0.1.6",
     "matter-js": "^0.17.1",
-    "mongoose": "^6.0.12",
     "next": "^12.0.2",
-    "particle.js": "^1.0.7",
-    "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.5",
-    "redux": "^4.1.1",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
     "node": "^16.11.1",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "postcss": "^8.4.4"
   }
 }
