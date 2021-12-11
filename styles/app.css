@@ -377,8 +377,10 @@ form {
   transform: translate(-0.15em, 0.15em);
 }
 
-.social_link svg {
+.social_svg {
   margin-left: 0.5em;
+  width: 1em;
+  height: 1em;
 }
 
 #tech_skills {
@@ -760,7 +762,7 @@ button:hover {
 
   .contact_form {
     width: 80%;
-    margin-top: 70%;
+    /* margin-top: 70%; */
   }
 
   /* PROJECTS */
@@ -894,19 +896,17 @@ button:hover {
 
   #name_title {
     margin-top: 5%;
+    font-size: 2.4rem;
   }
 
   .nav_link {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .nav_title {
-    margin: .5em 1em;
+    width: 25%;
+    margin: .5em auto;
   }
-
-  #name_title {
-  font-size: 3rem;
-}
 
   /* ABOUT */
 
@@ -934,9 +934,13 @@ button:hover {
     width: 100%;
   }
 
-  .contact_form {
-    margin-top: 90%;
+  .social_link {
+    font-size: 1rem;
   }
+
+  /* .contact_form {
+    margin-top: 90%;
+  } */
 
   .form_buttons button {
     margin: 0 auto;
