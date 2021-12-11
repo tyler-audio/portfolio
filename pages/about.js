@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import techSkills from '../lib/techSkills';
 
 const About = () => {
@@ -39,8 +40,16 @@ const About = () => {
             <div className="contact_form">
               <div className="form_border"></div>
               <h1 className="title contact_title">Contact Me</h1>
-              <form action="https://formsubmit.co/e932efb2dddd95fceef701b75cce0bf4" method="POST">
-                <input type="hidden" name="_next" value={`${process.env.HOST}/thankyou`}/>
+              <form
+                id="form"
+                action="https://formsubmit.co/e932efb2dddd95fceef701b75cce0bf4"
+                method="POST"
+                onSubmit={(e) => {
+                  e.target.reset();
+                  closeForm();
+                }}
+              >
+                <input type="hidden" name="_next" value='https://www.tylerwjones.dev/thankyou'/>
                 <input type="hidden" name="_captcha" value="false" />
 
                 <label>
@@ -50,7 +59,6 @@ const About = () => {
                     required
                     maxLength="20"
                     placeholder="Name"
-                    onInvalid={(e) => e.target.setCustomValidity('Please, leave your name')}
                   />
                 </label>
 
@@ -61,7 +69,6 @@ const About = () => {
                     required
                     maxLength="30"
                     placeholder="E-mail"
-                    onInvalid={(e) => e.target.setCustomValidity('Please, leave your e-mail')}
                   />
                 </label>
 
@@ -72,7 +79,6 @@ const About = () => {
                     required
                     maxLength="30"
                     placeholder="Subject"
-                    onInvalid={(e) => e.target.setCustomValidity('Please, write a subject')}
                   />
                 </label>
 
@@ -87,7 +93,6 @@ const About = () => {
                       const charCount = document.querySelector('.char_count');
                       charCount.innerHTML = `${e.target.value.length}/240`;
                     }}
-                    onInvalid={(e) => e.target.setCustomValidity('Please, leave me a message')}
                   />
                 </label>
                 <div className="char_count">0/240</div>
@@ -96,7 +101,8 @@ const About = () => {
                   <button
                     type="submit"
                     onClick={() => {
-                      closeForm();
+                      const form = document.getElementById('form');
+                      console.log(form.reportValidity());
                     }}
                   >Send</button>
                   <button

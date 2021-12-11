@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 const Resume = () => (
   <section className="row">
     <a id="resume" href="files/TylerJonesResume.pdf" download>
