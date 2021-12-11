@@ -67,6 +67,8 @@ a {
 strong {
   color: #566246;
   text-decoration: underline;
+  font-weight: normal;
+  font-style: italic;
 }
 
 label {
@@ -212,14 +214,16 @@ form {
 .project_tagline {
   font-size: 1.4rem;
   font-style: italic;
+  font-weight: 500;
   margin-bottom: 4%;
 }
 
 .project_details {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: normal;
   width: 40%;
   text-align: center;
+  margin: auto;
 }
 
 .project_details,
@@ -333,14 +337,15 @@ form {
   border-radius: 100%;
   width: 40%;
   box-shadow: #566246 0.2em 0.2em 0.4em;
+  image-rendering: optimizeSpeed;
 }
 
 #intro_text {
   width: 40%;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #4A4A48;
-  font-weight: 700;
+  font-weight: normal;
 }
 
 .social_links {
@@ -410,7 +415,7 @@ form {
   list-style-type: none;
   font-size: 1.2rem;
   color: #4A4A48;
-  font-weight: 700;
+  font-weight: normal;
 }
 
 /* ======== ANIMATED ENVELOPE ======== */
@@ -595,13 +600,12 @@ form {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
 }
 
 .contact_form {
   width: 60%;
   position: fixed;
-  margin-bottom: 50%;
+  margin-top: 10%;
   padding: .4em;
   background-color: #D8DAD3;
   transform: translateY(-200vh);
@@ -754,6 +758,11 @@ button:hover {
     width: 45%;
   }
 
+  .contact_form {
+    width: 80%;
+    margin-top: 70%;
+  }
+
   /* PROJECTS */
 
   .project_details p {
@@ -766,7 +775,7 @@ button:hover {
   /* ABOUT */
 
   #headshot {
-    width: 60%;
+    width: 70%;
   }
 
 /* PROJECTS */
@@ -778,10 +787,6 @@ button:hover {
   .project_details {
     font-size: 1.3rem;
     width: 50%;
-  }
-
-  .contact_form {
-    width: 80%;
   }
 }
 
@@ -926,7 +931,7 @@ button:hover {
   }
 
   .contact_form {
-    margin-bottom: 100%;
+    margin-top: 90%;
   }
 
   .form_buttons button {
