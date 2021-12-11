@@ -132,7 +132,7 @@ const About = () => {
           />
         </div>
         <div id="intro_text">
-          <h2 className="title">Hey, I'm Tyler!</h2>
+          <h2 className="title">Hey, I&apos;m Tyler!</h2>
           <p>I am a <strong>full stack software developer</strong> and <strong>audio engineer</strong> with a passion for the intersection between <strong>technology</strong> and <strong>art</strong>. Through my background in <strong>music production</strong>, I have developed <strong>strong creative intuition</strong> and a <strong>unique</strong>, <strong>versatile skill set</strong>. This perspective enables me to confidently navigate and find solutions in ambiguous situations.</p>
           <p>My initial pursuit of a career in the music industry led me to discovering the world of software engineering, where I instantly found a love for creating <strong>striking</strong>, <strong>intuitive</strong>, and <strong>innovative user interfaces</strong>. I am motivated by my ambitious nature as well as a desire to explore my passions and continue my growth both <strong>professionally</strong> and <strong>personally</strong>.</p>
           <p>When I am not coding or creating, you will find me either lost in a novel or laughing and enjoying time with loved ones.</p>
