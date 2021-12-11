@@ -7,6 +7,9 @@ const HomePage = () => {
           autoPlay={true}
           loop={true}
           muted={true}
+          disablePictureInPicture={true}
+          disableRemotePlayback={true}
+          playsInLine={true}
         />
     </section>
   )
