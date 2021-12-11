@@ -633,7 +633,7 @@ form {
 
 .contact_title {
   text-align: center;
-  font-size: 4em;
+  font-size: 4rem;
   margin: 0;
 }
 
@@ -727,7 +727,7 @@ button:hover {
 }
 
 .thankyou_title {
-  font-size: 3.5em;
+  font-size: 3.5rem;
 }
 
 .thankyou_note {
@@ -904,6 +904,10 @@ button:hover {
     margin: .5em 1em;
   }
 
+  #name_title {
+  font-size: 3rem;
+}
+
   /* ABOUT */
 
   #headshot {
@@ -961,5 +965,17 @@ button:hover {
 
   .project_links a {
     font-size: 2rem;
+  }
+
+  /* THANK YOU */
+
+  .thankyou_title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .thankyou_note {
+    font-size: 2rem;
+    text-align: center;
   }
 }
