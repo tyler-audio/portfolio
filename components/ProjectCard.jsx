@@ -14,11 +14,17 @@ const ProjectCard = ({ project, info, order }) => {
 
   if (process.browser) {
     const demo = document.querySelector(`.demo_${project}_modal`),
-      overlay = document.querySelector('.demo_overlay');
+      overlay = document.querySelector('.demo_overlay'),
+      video = document.querySelector(`.${project}_video`);
 
     const toggleDemo = () => {
       demo.classList.toggle('active');
       overlay.classList.toggle('active');
+    }
+
+    const stopDemo = () => {
+      video.pause();
+      video.currentTime = 0;
     }
   }
 
@@ -74,7 +80,7 @@ const ProjectCard = ({ project, info, order }) => {
       {info.hasDemo ?
         <>
           <div className={`demo_${project}_modal`}>
-            <video controls>
+            <video className={`${project}_video`} controls>
               <source src={`/media/${project}_demo.mp4`} type="video/mp4"/>
             </video>
           </div>
@@ -86,6 +92,7 @@ const ProjectCard = ({ project, info, order }) => {
       onClick={() => {
         if (toggleDemo) {
           toggleDemo();
+          stopDemo();
         } else {
           alert('Please, try again')
         }

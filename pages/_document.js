@@ -10,6 +10,8 @@ class myDocument extends Document {
           <meta property="og:title" content="Tyler Jones Portfolio Site"/>
           <meta property="og:description" content="Checkout my portfolio website!"/>
           <meta property="og:image" content="/images/websiteimage.png"/>
+          <meta property="og:type" content="Website" />
+          <meta property="og:author" content="Tyler Jones"/>
           <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
         </Head>
         <body>
