@@ -2,11 +2,14 @@
 import techSkills from '../lib/techSkills';
 
 const About = () => {
+  let isMobile = false;
+
   if (process.browser) {
     const letter= document.querySelector('.letter'),
       form = document.querySelector('.contact_form'),
       topFold = document.querySelector('.top_fold'),
-      overlay = document.querySelector('.form_overlay');
+      overlay = document.querySelector('.form_overlay'),
+      envelope = document.querySelector('.envelope');
 
     const openForm = () => {
       if (letter.classList.contains('close')) letter.classList.remove('close');
@@ -33,102 +36,109 @@ const About = () => {
 
       overlay.classList.toggle('active');
     }
+
+    if (window.innerWidth <= 768) {
+      isMobile = true;
+      envelope.href = 'mailto:tylerj.audio94@gmail.com';
+      envelope.target = '_blank';
+    }
   }
+
   return (
     <section>
       <div className="form_wrapper">
-            <div className="contact_form">
-              <div className="form_border"></div>
-              <h1 className="title contact_title">Contact Me</h1>
-              <form
-                id="form"
-                action="https://formsubmit.co/e932efb2dddd95fceef701b75cce0bf4"
-                method="POST"
-                onSubmit={(e) => {
-                  e.target.reset();
-                  closeForm();
+        <div className="contact_form">
+          <div className="form_border"></div>
+          <h1 className="title contact_title">Contact Me</h1>
+          <form
+            id="form"
+            action="https://formsubmit.co/e932efb2dddd95fceef701b75cce0bf4"
+            method="POST"
+            onSubmit={(e) => {
+              e.target.reset();
+              closeForm();
+            }}
+          >
+            <input type="hidden" name="_next" value='https://www.tylerwjones.dev/thankyou'/>
+            <input type="hidden" name="_captcha" value="false" />
+
+            <label>
+              <input
+                type="text"
+                name="name"
+                required
+                maxLength="20"
+                placeholder="Name"
+              />
+            </label>
+
+            <label>
+              <input
+                type="email"
+                name="email"
+                required
+                maxLength="30"
+                placeholder="E-mail"
+              />
+            </label>
+
+            <label>
+              <input
+                type="text"
+                name="subject"
+                required
+                maxLength="30"
+                placeholder="Subject"
+              />
+            </label>
+
+            <label id="textarea">
+              <textarea
+                type="text"
+                name="message"
+                required
+                maxLength="240"
+                placeholder="Message"
+                onKeyUp={(e) => {
+                  const charCount = document.querySelector('.char_count');
+                  charCount.innerHTML = `${e.target.value.length}/240`;
                 }}
-              >
-                <input type="hidden" name="_next" value='https://www.tylerwjones.dev/thankyou'/>
-                <input type="hidden" name="_captcha" value="false" />
+              />
+            </label>
+            <div className="char_count">0/240</div>
 
-                <label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    maxLength="20"
-                    placeholder="Name"
-                  />
-                </label>
-
-                <label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    maxLength="30"
-                    placeholder="E-mail"
-                  />
-                </label>
-
-                <label>
-                  <input
-                    type="text"
-                    name="subject"
-                    required
-                    maxLength="30"
-                    placeholder="Subject"
-                  />
-                </label>
-
-                <label id="textarea">
-                  <textarea
-                    type="text"
-                    name="message"
-                    required
-                    maxLength="240"
-                    placeholder="Message"
-                    onKeyUp={(e) => {
-                      const charCount = document.querySelector('.char_count');
-                      charCount.innerHTML = `${e.target.value.length}/240`;
-                    }}
-                  />
-                </label>
-                <div className="char_count">0/240</div>
-
-                <div className="form_buttons">
-                  <button
-                    type="submit"
-                    onClick={() => {
-                      const form = document.getElementById('form');
-                      console.log(form.reportValidity());
-                    }}
-                  >Send</button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (closeForm) {
-                        closeForm();
-                      } else {
-                        alert('Please, try again');
-                      }
-                    }}
-                  >Scrap</button>
-                </div>
-              </form>
+            <div className="form_buttons">
+              <button
+                type="submit"
+                onClick={() => {
+                  const form = document.getElementById('form');
+                  console.log(form.reportValidity());
+                }}
+              >Send</button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (closeForm) {
+                    closeForm();
+                  } else {
+                    alert('Please, try again');
+                  }
+                }}
+              >Scrap</button>
             </div>
-            <div
-              className="form_overlay"
-              onClick={() => {
-                if (closeForm) {
-                  closeForm();
-                } else {
-                  alert('Please, try again');
-                }
-              }}
-            />
-          </div>
+          </form>
+        </div>
+        <div
+          className="form_overlay"
+          onClick={() => {
+            if (closeForm) {
+              closeForm();
+            } else {
+              alert('Please, try again');
+            }
+          }}
+        />
+      </div>
       <div className="intro row">
         <div className="row headshot_container">
           <img
@@ -176,11 +186,13 @@ const About = () => {
               </svg>
             </a>
           </h3>
-          <div
+          <a
             className="envelope"
-            onClick={() => {
-              if (openForm) {
+            onClick={(e) => {
+              if (openForm && !isMobile) {
                 openForm();
+              } else if (isMobile) {
+                console.log(isMobile);
               } else {
                 alert('Please, try again');
               }
@@ -201,7 +213,7 @@ const About = () => {
               <div className="left_fold"></div>
             </div>
             <div className="shadow"></div>
-          </div>
+          </a>
         </div>
         <div id="tech_skills" className="row">
           <h3 className="title">Technical Skills</h3>
